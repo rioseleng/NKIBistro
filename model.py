@@ -1,7 +1,6 @@
 # Import modules and packages
 import tensorflow as tf
 import numpy as np
-from tensorflow import keras
 import matplotlib.pyplot as plt
 
 # Functions and procedures
@@ -17,27 +16,16 @@ def plot_predictions(train_data, train_labels, test_data, test_labels, predictio
     # Plot the predictions in red (predictions were made on the test data)
     plt.scatter(test_data, predictions, c="r", label="Predictions")
     # Show the legend
-    plt.legend(shadow='True')
+    plt.legend(shadow=True)
     # Set grids
     plt.grid(which='major', c='#cccccc', linestyle='--', alpha=0.5)
     # Some text
-    plt.title('Model Results', family='Arial', fontsize=14)
-    plt.xlabel('X axis values', family='Arial', fontsize=11)
-    plt.ylabel('Y axis values', family='Arial', fontsize=11)
+    plt.title('Model Results', fontsize=14)
+    plt.xlabel('X axis values', fontsize=11)
+    plt.ylabel('Y axis values', fontsize=11)
     # Show
     plt.savefig('model_results.png', dpi=120)
-
-def mae(y_test, y_pred):
-    """
-    Calculates mean absolute error between y_test and y_preds.
-    """
-    return tf.metrics.mean_absolute_error(y_test, y_pred)
-
-def mse(y_test, y_pred):
-    """
-    Calculates mean squared error between y_test and y_preds.
-    """
-    return tf.metrics.mean_squared_error(y_test, y_pred)
+    plt.show()
 
 # Check Tensorflow version
 print(tf.__version__)
@@ -71,7 +59,7 @@ model = tf.keras.Sequential([
 ])
 
 # Compile the model
-model.compile(loss=tf.keras.losses.mae,
+model.compile(loss=tf.keras.losses.MeanAbsoluteError(),
               optimizer=tf.keras.optimizers.SGD(),
               metrics=['mae'])
 
@@ -83,8 +71,11 @@ y_preds = model.predict(X_test)
 plot_predictions(train_data=X_train, train_labels=y_train, test_data=X_test, test_labels=y_test, predictions=y_preds)
 
 # Calculate model_1 metrics
-mae_1 = np.round(float(mae(y_test, y_preds.squeeze()).numpy()), 2)
-mse_1 = np.round(float(mse(y_test, y_preds.squeeze()).numpy()), 2)
+mae_metric = tf.keras.losses.MeanAbsoluteError()
+mse_metric = tf.keras.losses.MeanSquaredError()
+
+mae_1 = np.round(float(mae_metric(y_test, y_preds).numpy()), 2)
+mse_1 = np.round(float(mse_metric(y_test, y_preds).numpy()), 2)
 print(f'\nMean Absolute Error = {mae_1}, Mean Squared Error = {mse_1}.')
 
 # Write metrics to file
