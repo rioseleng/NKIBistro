@@ -43,10 +43,10 @@ def mse(y_test, y_pred):
 print(tf.__version__)
 
 # Create features
-X = np.arange(-100, 100, 4).reshape(-1, 1)
+X = np.arange(-100, 100, 4)
 
 # Create labels
-y = np.arange(-90, 110, 4).reshape(-1, 1)
+y = np.arange(-90, 110, 4)
 
 # Split data into train and test sets
 X_train = X[:40] # first 40 examples (80% of data)
@@ -54,6 +54,12 @@ y_train = y[:40]
 
 X_test = X[40:] # last 10 examples (20% of data)
 y_test = y[40:]
+
+# Reshape input data to be 2D
+X_train = X_train.reshape(-1, 1)
+X_test = X_test.reshape(-1, 1)
+y_train = y_train.reshape(-1, 1)
+y_test = y_test.reshape(-1, 1)
 
 # Set random seed
 tf.random.set_seed(42)
