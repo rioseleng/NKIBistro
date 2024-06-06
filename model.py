@@ -34,7 +34,7 @@ from sklearn.metrics import accuracy_score
 # downloaded = drive.CreateFile({'id':id})
 # downloaded.GetContentFile('dataset.csv')
 
-data = pd.read_csv('dataset.csv')
+data = pd.read_csv('diabetes.csv')
 data.head()
 
 data.isnull().sum()
