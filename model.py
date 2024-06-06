@@ -15,24 +15,24 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-!pip install -U -q PyDrive
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-from google.colab import auth
-from oauth2client.client import GoogleCredentials
+# !pip install -U -q PyDrive
+# from pydrive.auth import GoogleAuth
+# from pydrive.drive import GoogleDrive
+# from google.colab import auth
+# from oauth2client.client import GoogleCredentials
 
-auth.authenticate_user()
-gauth = GoogleAuth()
-gauth.credentials = GoogleCredentials.get_application_default()
-drive = GoogleDrive(gauth)
+# auth.authenticate_user()
+# gauth = GoogleAuth()
+# gauth.credentials = GoogleCredentials.get_application_default()
+# drive = GoogleDrive(gauth)
 
-link = 'https://drive.google.com/file/d/1SUY_yuEPHfNciNcTV5BQUf4_NGNzcj5N/view?usp=sharing'
+# link = 'https://drive.google.com/file/d/1SUY_yuEPHfNciNcTV5BQUf4_NGNzcj5N/view?usp=sharing'
 
-id = link.split('d/')[1].split('/view?')[0]
-print (id)
+# id = link.split('d/')[1].split('/view?')[0]
+# print (id)
 
-downloaded = drive.CreateFile({'id':id})
-downloaded.GetContentFile('dataset.csv')
+# downloaded = drive.CreateFile({'id':id})
+# downloaded.GetContentFile('dataset.csv')
 
 data = pd.read_csv('dataset.csv')
 data.head()
