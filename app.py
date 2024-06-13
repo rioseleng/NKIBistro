@@ -27,6 +27,8 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 def user_report():
     pregnancies = st.sidebar.slider('Pregnancies', 0, 17, 3)
     glucose = st.sidebar.slider('Glucose', 0, 200, 120)
+    blood_pressure = st.sidebar.slider('BloodPressure', 0, 122, 69)
+    skin_thickness = st.sidebar.slider('SkinThickness', 0, 99, 20)
     insulin = st.sidebar.slider('Insulin', 0, 846, 79)
     bmi = st.sidebar.slider('BMI', 0, 67, 20)
     dpf = st.sidebar.slider('Diabetes Pedigree Function', 0.0, 2.4, 0.47)
@@ -35,6 +37,8 @@ def user_report():
     user_report_data = {
         'Pregnancies': pregnancies,
         'Glucose': glucose,
+        'BloodPressure': blood_pressure,
+        'SkinThickness': skin_thickness,
         'Insulin': insulin,
         'BMI': bmi,
         'DiabetesPedigreeFunction': dpf,
@@ -49,7 +53,7 @@ st.subheader('Patient Data')
 st.write(user_data)
 
 # MODEL
-model = LogisticRegression()
+model = LogisticRegression(max_iter=200)
 model.fit(x_train, y_train)
 user_result = model.predict(user_data)
 
@@ -114,4 +118,4 @@ st.subheader('Your Report: ')
 output = 'You are not Diabetic' if user_result[0] == 0 else 'You are Diabetic'
 st.title(output)
 st.subheader('Accuracy: ')
-st.write(str(accuracy_score(y_test, rf.predict(x_test)) * 100) + '%')
+st.write(str(accuracy_score(y_test, model.predict(x_test)) * 100) + '%')
