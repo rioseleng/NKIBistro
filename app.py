@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 
@@ -53,9 +53,9 @@ st.subheader('Patient Data')
 st.write(user_data)
 
 # MODEL
-rf = RandomForestClassifier()
-rf.fit(x_train, y_train)
-user_result = rf.predict(user_data)
+mpdel = LogisticRegression()
+model.fit(x_train, y_train)
+user_result = model.predict(user_data)
 
 # VISUALISATIONS
 st.title('Visualised Patient Report')
@@ -82,26 +82,6 @@ plt.xticks(np.arange(10, 100, 5))
 plt.yticks(np.arange(0, 220, 10))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_glucose)
-
-# Age vs Bp
-st.header('Blood Pressure Value Graph (Others vs Yours)')
-fig_bp = plt.figure()
-sns.scatterplot(x='Age', y='BloodPressure', data=df, hue='Outcome', palette='Reds')
-sns.scatterplot(x=user_data['Age'], y=user_data['BloodPressure'], s=150, color=color)
-plt.xticks(np.arange(10, 100, 5))
-plt.yticks(np.arange(0, 130, 10))
-plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_bp)
-
-# Age vs SkinThickness
-st.header('Skin Thickness Value Graph (Others vs Yours)')
-fig_st = plt.figure()
-sns.scatterplot(x='Age', y='SkinThickness', data=df, hue='Outcome', palette='Blues')
-sns.scatterplot(x=user_data['Age'], y=user_data['SkinThickness'], s=150, color=color)
-plt.xticks(np.arange(10, 100, 5))
-plt.yticks(np.arange(0, 110, 10))
-plt.title('0 - Healthy & 1 - Unhealthy')
-st.pyplot(fig_st)
 
 # Age vs Insulin
 st.header('Insulin Value Graph (Others vs Yours)')
