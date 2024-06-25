@@ -35,8 +35,9 @@ This report summarizes the progress made on the final project for Operation Syst
   2. Docker Integration and Configuration\
      The container we are using for MLOps is Docker. Docker is chosen in MLOps for its ability to ensure consistency across environments from development to production, eliminating the "it works on my machine" problem by packaging applications with their dependencies. Its use of containers facilitates the automation of the machine learning lifecycle, making it easier to deploy, scale, and manage applications swiftly and securely. Docker also supports reproducibility and version control, critical for managing machine learning experiments and promoting collaboration among teams. The picture below us is the creation of the docker image:\
      The next image is running the docker image:\
-     The last image shows the PyCharm IDE with a project named NKBistro2. It includes a Dockerfile that specifies the configuration for the Docker container. The Dockerfile details are as follows:\
-  3. Deploy model to render.com using scripts\
+     ![Docker image](images/docker_images.jpeg)\
+     ![Docker image running](images/docker_jalan.jpeg)
+  4. Deploy model to render.com using scripts\
      We use Render.com for deploying our model because it simplifies the hosting and scaling of web applications, and it integrates seamlessly with GitHub for continuous deployment. We use a Streamlit script because it allows for rapid development of interactive web interfaces for our models, making it easier to showcase and test model functionalities directly through a web browser.
 
 **[Week 4 Progress]**
