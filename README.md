@@ -12,7 +12,7 @@ This report summarizes the progress made on the final project for Operation Syst
   4. Begin creating CI tools using GitHub Action\
      We use GitHub Actions to automate our Continuous Integration (CI) process because it integrates directly with our GitHub repositories, triggering workflows on code commits and pull requests to ensure that our code always meets quality standards. It allows us to automatically run tests and build processes, reducing errors and improving productivity by providing immediate feedback on integration issues. Additionally, GitHub Actions supports a variety of operating systems and programming languages, making it a versatile tool for diverse development environments.
 
-     [gambar dokcer image](images/docker_images.jpeg)
+     ![gambar dokcer image](images/docker_images.jpeg)
 
 **[Week 2 Progress]**
   1. Project Timeline and Weekly Meeting\
