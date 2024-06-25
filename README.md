@@ -15,7 +15,7 @@ This report summarizes the progress made on the final project for Operation Syst
   2. Project Timeline and Weekly Meeting\
      To ensure that our MLOps project runs according to plan, we are using Asana to make the project's gantt chart to track progress and execution (Gantt chart) and key milestones.\
      [Asana](https://app.asana.com/0/1207504570577724/1207504570577724)\
-     ![Week 1 milestone](images/project timeline.jpeg)\
+     ![Week 1 milestone](images/project_timeline.jpeg)\
   4. Github repository already created
   5. Begin creating CI tools using GitHub Action\
      We use GitHub Actions to automate our Continuous Integration (CI) process because it integrates directly with our GitHub repositories, triggering workflows on code commits and pull requests to ensure that our code always meets quality standards. It allows us to automatically run tests and build processes, reducing errors and improving productivity by providing immediate feedback on integration issues. Additionally, GitHub Actions supports a variety of operating systems and programming languages, making it a versatile tool for diverse development environments.
@@ -23,7 +23,7 @@ This report summarizes the progress made on the final project for Operation Syst
 **[Week 2 Progress]**
   1. Project Timeline and Weekly Meeting\
      This Gantt chart, along with the additional information, assists the team in following a structured and organized method for the project, making sure all tasks are monitored, deadlines are achieved, and team members are in sync with the project objectives. Utilizing Asana increases effectiveness in managing projects and offers a central hub for teamwork and monitoring progress.\
-     ![Week 2 milestone](images/week 2.jpeg)
+     ![Week 2 milestone](images/week_2.jpeg)
   3. The machine learning model created\
      The script is made for a task involving the categorization of logistic regression. Data pretreatment steps include partitioning the dataset and removing unnecessary attributes. The test dataset's ability to predict diabetes accurately is used to evaluate the model's performance.
   4. Configure the CML as CI tools into github action\
@@ -31,7 +31,7 @@ This report summarizes the progress made on the final project for Operation Syst
 
 **[Week 3 Progress]**
   1. Project Timeline and Weekly Meeting\
-     ![Week 3 milestone](images/week 3.jpeg)
+     ![Week 3 milestone](images/week_3.jpeg)
   3. Docker Integration and Configuration\
      The container we are using for MLOps is Docker. Docker is chosen in MLOps for its ability to ensure consistency across environments from development to production, eliminating the "it works on my machine" problem by packaging applications with their dependencies. Its use of containers facilitates the automation of the machine learning lifecycle, making it easier to deploy, scale, and manage applications swiftly and securely. Docker also supports reproducibility and version control, critical for managing machine learning experiments and promoting collaboration among teams. The picture below us is the creation of the docker image:\
      The next image is running the docker image:\
