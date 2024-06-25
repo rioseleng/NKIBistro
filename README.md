@@ -1,5 +1,12 @@
 # NKIBistro Group Project
 
+| Nama | NRP | 
+|---------|---------|
+| Rio Rezky Seleng | 5026211191  | 
+| Harist Hamzah Hutapea | 5026201194  |
+| Tabassum Kajlima Syafrin | 5026211193  | 
+| Aria Radzika Pradayan | 5026211054 |
+
 **[Week 1 Progress]**
   1. The project scope and objectives already defined
   2. A project plan with timelines and milestones already created
